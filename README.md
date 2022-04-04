@@ -4,7 +4,7 @@ Implementation of various data structures and algorithms in Go,
 `but with Generics`.
 
 You must be know [gods](https://github.com/emirpasic/gods),
-A very useful go data interface library.
+A very useful go data structure library.
 
 But it hasn't been updated for a long time.
 
