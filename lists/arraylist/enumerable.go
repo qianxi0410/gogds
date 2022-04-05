@@ -6,6 +6,13 @@ import (
 	"github.com/qianxi0410/gogds/containers"
 )
 
+type EnumerableWithIndex[T comparable] interface {
+	// Filter returns a new container containing all elements for which the given function returns a true value.
+	Filter(func(index int, value T) bool) *List[T]
+
+	containers.EnumerableWithIndex[T]
+}
+
 func assertEnumerableImplementation() {
 	var _ containers.EnumerableWithIndex[int] = New[int]()
 	var _ containers.EnumerableWithIndex[string] = New[string]()
@@ -14,6 +21,14 @@ func assertEnumerableImplementation() {
 	var _ containers.EnumerableWithIndex[time.Time] = New[time.Time]()
 	var _ containers.EnumerableWithIndex[bool] = New[bool]()
 	var _ containers.EnumerableWithIndex[struct{}] = New[struct{}]()
+
+	var _ EnumerableWithIndex[int] = New[int]()
+	var _ EnumerableWithIndex[string] = New[string]()
+	var _ EnumerableWithIndex[float32] = New[float32]()
+	var _ EnumerableWithIndex[complex128] = New[complex128]()
+	var _ EnumerableWithIndex[time.Time] = New[time.Time]()
+	var _ EnumerableWithIndex[bool] = New[bool]()
+	var _ EnumerableWithIndex[struct{}] = New[struct{}]()
 }
 
 // Each calls the given function once for each element, passing that element's index and value.
