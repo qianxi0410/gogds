@@ -14,6 +14,14 @@ func assertIteratorImplementation() {
 	var _ containers.IteratorWithIndex[time.Time] = &Iterator[time.Time]{}
 	var _ containers.IteratorWithIndex[bool] = &Iterator[bool]{}
 	var _ containers.IteratorWithIndex[struct{}] = &Iterator[struct{}]{}
+
+	var _ containers.ReverseIteratorWithIndex[int] = &Iterator[int]{}
+	var _ containers.ReverseIteratorWithIndex[string] = &Iterator[string]{}
+	var _ containers.ReverseIteratorWithIndex[float32] = &Iterator[float32]{}
+	var _ containers.ReverseIteratorWithIndex[complex128] = &Iterator[complex128]{}
+	var _ containers.ReverseIteratorWithIndex[time.Time] = &Iterator[time.Time]{}
+	var _ containers.ReverseIteratorWithIndex[bool] = &Iterator[bool]{}
+	var _ containers.ReverseIteratorWithIndex[struct{}] = &Iterator[struct{}]{}
 }
 
 // Iterator holds the iterator's state
