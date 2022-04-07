@@ -14,6 +14,7 @@ type Lists[T any] interface {
 	Swap(int, int)
 	Insert(int, ...T)
 	Set(int, T)
+	IndexOf(T) int
 
 	containers.Container[T]
 }
