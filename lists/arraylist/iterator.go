@@ -1,27 +1,13 @@
 package arraylist
 
 import (
-	"time"
-
 	"github.com/qianxi0410/gogds/containers"
 )
 
-func assertIteratorImplementation() {
-	var _ containers.IteratorWithIndex[int] = &Iterator[int]{}
-	var _ containers.IteratorWithIndex[string] = &Iterator[string]{}
-	var _ containers.IteratorWithIndex[float32] = &Iterator[float32]{}
-	var _ containers.IteratorWithIndex[complex128] = &Iterator[complex128]{}
-	var _ containers.IteratorWithIndex[time.Time] = &Iterator[time.Time]{}
-	var _ containers.IteratorWithIndex[bool] = &Iterator[bool]{}
-	var _ containers.IteratorWithIndex[struct{}] = &Iterator[struct{}]{}
+func assertIteratorImplementation[T comparable]() {
+	var _ containers.IteratorWithIndex[T] = &Iterator[T]{}
 
-	var _ containers.ReverseIteratorWithIndex[int] = &Iterator[int]{}
-	var _ containers.ReverseIteratorWithIndex[string] = &Iterator[string]{}
-	var _ containers.ReverseIteratorWithIndex[float32] = &Iterator[float32]{}
-	var _ containers.ReverseIteratorWithIndex[complex128] = &Iterator[complex128]{}
-	var _ containers.ReverseIteratorWithIndex[time.Time] = &Iterator[time.Time]{}
-	var _ containers.ReverseIteratorWithIndex[bool] = &Iterator[bool]{}
-	var _ containers.ReverseIteratorWithIndex[struct{}] = &Iterator[struct{}]{}
+	var _ containers.ReverseIteratorWithIndex[T] = &Iterator[T]{}
 }
 
 // Iterator holds the iterator's state

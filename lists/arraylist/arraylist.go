@@ -3,20 +3,13 @@ package arraylist
 import (
 	"fmt"
 	"strings"
-	"time"
 
 	"github.com/qianxi0410/gogds/lists"
 	"github.com/qianxi0410/gogds/utils"
 )
 
-func assertListImplementation() {
-	var _ lists.Lists[int] = New[int]()
-	var _ lists.Lists[string] = New[string]()
-	var _ lists.Lists[float32] = New[float32]()
-	var _ lists.Lists[complex128] = New[complex128]()
-	var _ lists.Lists[time.Time] = New[time.Time]()
-	var _ lists.Lists[bool] = New[bool]()
-	var _ lists.Lists[struct{}] = New[struct{}]()
+func assertListImplementation[T comparable]() {
+	var _ lists.Lists[T] = New[T]()
 }
 
 type List[T comparable] struct {

@@ -1,8 +1,6 @@
 package arraylist
 
 import (
-	"time"
-
 	"github.com/qianxi0410/gogds/containers"
 )
 
@@ -13,22 +11,8 @@ type EnumerableWithIndex[T comparable] interface {
 	containers.EnumerableWithIndex[T]
 }
 
-func assertEnumerableImplementation() {
-	var _ containers.EnumerableWithIndex[int] = New[int]()
-	var _ containers.EnumerableWithIndex[string] = New[string]()
-	var _ containers.EnumerableWithIndex[float32] = New[float32]()
-	var _ containers.EnumerableWithIndex[complex128] = New[complex128]()
-	var _ containers.EnumerableWithIndex[time.Time] = New[time.Time]()
-	var _ containers.EnumerableWithIndex[bool] = New[bool]()
-	var _ containers.EnumerableWithIndex[struct{}] = New[struct{}]()
-
-	var _ EnumerableWithIndex[int] = New[int]()
-	var _ EnumerableWithIndex[string] = New[string]()
-	var _ EnumerableWithIndex[float32] = New[float32]()
-	var _ EnumerableWithIndex[complex128] = New[complex128]()
-	var _ EnumerableWithIndex[time.Time] = New[time.Time]()
-	var _ EnumerableWithIndex[bool] = New[bool]()
-	var _ EnumerableWithIndex[struct{}] = New[struct{}]()
+func assertEnumerableImplementation[T comparable]() {
+	var _ EnumerableWithIndex[T] = New[T]()
 }
 
 // Each calls the given function once for each element, passing that element's index and value.

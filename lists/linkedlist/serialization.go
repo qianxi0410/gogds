@@ -1,20 +1,12 @@
 package linkedlist
 
 import (
-	"time"
-
 	jsoniter "github.com/json-iterator/go"
 	"github.com/qianxi0410/gogds/containers"
 )
 
-func assertSerializationImplementation() {
-	var _ containers.JSONSerializer = New[int]()
-	var _ containers.JSONSerializer = New[string]()
-	var _ containers.JSONSerializer = New[float32]()
-	var _ containers.JSONSerializer = New[complex128]()
-	var _ containers.JSONSerializer = New[time.Time]()
-	var _ containers.JSONSerializer = New[bool]()
-	var _ containers.JSONSerializer = New[struct{}]()
+func assertSerializationImplementation[T comparable]() {
+	var _ containers.JSONSerializer = New[T]()
 }
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
