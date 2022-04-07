@@ -23,9 +23,7 @@ func (l *List[T]) Iterator() Iterator[T] {
 
 // Next returns true if there was a next element in the iteration.
 func (it *Iterator[T]) Next() bool {
-	if it.cur < it.list.size {
-		it.cur++
-	}
+	it.cur++
 	return it.list.checkIdx(it.cur)
 }
 
