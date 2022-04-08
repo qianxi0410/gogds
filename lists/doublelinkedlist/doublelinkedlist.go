@@ -304,12 +304,13 @@ func (l *List[T]) Set(i int, value T) {
 
 // String returns a string representation of container
 func (l *List[T]) String() string {
-	str := "DoubleLinkedList\n"
+	str := "DoubleLinkedList: "
 	values := []string{}
 	for element := l.first; element != nil; element = element.next {
 		values = append(values, fmt.Sprintf("%v", element.val))
 	}
 	str += strings.Join(values, ", ")
+	str = "[" + str + "]"
 	return str
 }
 

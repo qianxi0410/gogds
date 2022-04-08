@@ -176,12 +176,13 @@ func (l *List[T]) Set(index int, value T) {
 
 // String returns a string representation of container
 func (l *List[T]) String() string {
-	str := "ArrayList\n"
+	str := "ArrayList: "
 	values := []string{}
 	for _, value := range l.elements[:l.size] {
 		values = append(values, fmt.Sprintf("%v", value))
 	}
 	str += strings.Join(values, ", ")
+	str = "[" + str + "]"
 	return str
 }
 

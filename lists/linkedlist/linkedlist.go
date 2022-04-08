@@ -263,12 +263,13 @@ func (l *List[T]) Set(index int, value T) {
 
 // String returns a string representation of the list.
 func (l *List[T]) String() string {
-	str := "LinkedList\n"
+	str := "LinkedList: "
 	values := []string{}
 	for element := l.first; element != nil; element = element.next {
 		values = append(values, fmt.Sprintf("%v", element.val))
 	}
 	str += strings.Join(values, ", ")
+	str = "[" + str + "]"
 	return str
 }
 
