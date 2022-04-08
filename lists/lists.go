@@ -15,6 +15,10 @@ type Lists[T any] interface {
 	Insert(int, ...T)
 	Set(int, T)
 	IndexOf(T) int
+	String() string
+
+	Prepend(values ...T)
+	Append(values ...T)
 
 	containers.Container[T]
 }

@@ -46,6 +46,16 @@ func (l *List[T]) Add(values ...T) {
 	}
 }
 
+// Append append the values to the end of the list.
+func (l *List[T]) Append(values ...T) {
+	l.Add(values...)
+}
+
+// Prepend prepend the values to the beginning of the list.
+func (l *List[T]) Prepend(values ...T) {
+	l.Insert(0, values...)
+}
+
 // Get get element by index.
 func (l *List[T]) Get(index int) (t T, ok bool) {
 	if !l.checkIdx(index) {
