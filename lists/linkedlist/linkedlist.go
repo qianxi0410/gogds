@@ -263,7 +263,7 @@ func (l *List[T]) Set(index int, value T) {
 
 // String returns a string representation of the list.
 func (l *List[T]) String() string {
-	str := "SinglyLinkedList\n"
+	str := "LinkedList\n"
 	values := []string{}
 	for element := l.first; element != nil; element = element.next {
 		values = append(values, fmt.Sprintf("%v", element.val))
