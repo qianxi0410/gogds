@@ -94,6 +94,10 @@ func (l *List[T]) Remove(index int) (t T, _ bool) {
 
 	if index == 0 {
 		t = l.first.val
+
+		if l.first == l.last {
+			l.last = nil
+		}
 		l.first = l.first.next
 		l.size--
 		return t, true

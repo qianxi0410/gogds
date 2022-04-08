@@ -62,6 +62,11 @@ func TestRemove(t *testing.T) {
 	v, ok = l.Remove(2)
 	assert.True(t, ok)
 	assert.Equal(t, 4, v)
+
+	l = New(1)
+	l.Remove(0)
+	assert.Nil(t, l.first)
+	assert.Nil(t, l.last)
 }
 
 func TestContains(t *testing.T) {
