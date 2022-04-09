@@ -1,4 +1,4 @@
-package linkedlist
+package doublelinkedlist
 
 import (
 	jsoniter "github.com/json-iterator/go"
