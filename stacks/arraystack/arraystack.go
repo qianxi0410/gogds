@@ -77,3 +77,7 @@ func (s *Stack[T]) String() string {
 	str := fmt.Sprintf("ArrayStack: [%s]\n", strings.Join(values, ", "))
 	return str
 }
+
+func (s *Stack[T]) checkIdx(index int) bool {
+	return index >= 0 && index < s.list.Size()
+}
