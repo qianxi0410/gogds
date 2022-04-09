@@ -74,6 +74,6 @@ func (s *Stack[T]) String() string {
 		values = append(values, fmt.Sprintf("%v", v))
 	}
 
-	str := fmt.Sprintf("ArrayStack: [%s]", strings.Join(values, ", "))
+	str := fmt.Sprintf("ArrayStack: [%s]\n", strings.Join(values, ", "))
 	return str
 }
