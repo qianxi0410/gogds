@@ -8,7 +8,6 @@ type Map[K any, V any] interface {
 	Get(K) (V, bool)
 	Remove(K)
 	Keys() []K
-	Vlues() []V
 
-	containers.Container[any]
+	containers.Container[V]
 }
