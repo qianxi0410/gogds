@@ -5,7 +5,12 @@ import (
 	"strings"
 
 	"github.com/qianxi0410/gogds/lists/linkedlist"
+	"github.com/qianxi0410/gogds/stacks"
 )
+
+func assertStackImplementation[T comparable]() {
+	var _ stacks.Stack[T] = New[T]()
+}
 
 // Stack is a last-in-first-out (LIFO) stack of elements.
 // hold a linkedlist.
