@@ -7,6 +7,7 @@ import (
 	"github.com/qianxi0410/gogds/maps"
 )
 
+// nolint
 func assertMapImplementation[K comparable, V any]() {
 	var _ maps.Map[K, V] = New[K, V]()
 }

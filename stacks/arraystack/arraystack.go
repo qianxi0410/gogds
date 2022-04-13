@@ -8,6 +8,7 @@ import (
 	"github.com/qianxi0410/gogds/stacks"
 )
 
+// nolint
 func assertStackImplementation[T comparable]() {
 	var _ stacks.Stack[T] = New[T]()
 }

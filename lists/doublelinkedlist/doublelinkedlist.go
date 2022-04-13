@@ -8,6 +8,7 @@ import (
 	"github.com/qianxi0410/gogds/utils"
 )
 
+// nolint
 func assertListImplementation[T comparable]() {
 	var _ lists.Lists[T] = New[T]()
 }

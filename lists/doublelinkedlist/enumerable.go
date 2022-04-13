@@ -9,6 +9,7 @@ type EnumerableWithIndex[T comparable] interface {
 	containers.EnumerableWithIndex[T]
 }
 
+// nolint
 func assertEnumerableImplementation[T comparable]() {
 	var _ EnumerableWithIndex[T] = New[T]()
 }

@@ -2,6 +2,7 @@ package linkedlist
 
 import "github.com/qianxi0410/gogds/containers"
 
+// nolint
 func assertIteratorImplementation[T comparable]() {
 	var _ containers.IteratorWithIndex[T] = &Iterator[T]{}
 }

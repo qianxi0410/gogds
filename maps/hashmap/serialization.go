@@ -5,6 +5,7 @@ import (
 	"github.com/qianxi0410/gogds/containers"
 )
 
+// nolint
 func assertSerializationImplementation[K comparable, V any]() {
 	var _ containers.JSONSerializer = New[K, V]()
 	var _ containers.JSONDeserializer = New[K, V]()

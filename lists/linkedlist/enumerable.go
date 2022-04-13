@@ -2,6 +2,7 @@ package linkedlist
 
 import "github.com/qianxi0410/gogds/containers"
 
+// nolint
 func assertEnumerableImplementation[T comparable]() {
 	var _ containers.EnumerableWithIndex[T] = &List[T]{}
 
