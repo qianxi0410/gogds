@@ -83,7 +83,6 @@ func TestContains(t *testing.T) {
 
 	ok = l.Contains(-1)
 	assert.False(t, ok)
-
 }
 
 func TestIndexOf(t *testing.T) {

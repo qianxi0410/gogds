@@ -32,7 +32,6 @@ func TestGet(t *testing.T) {
 	v, ok = m.Get(5)
 	assert.False(t, ok)
 	assert.Equal(t, 0, v)
-
 }
 
 func TestRemove(t *testing.T) {

@@ -14,7 +14,6 @@ func TestPush(t *testing.T) {
 
 	s.Push(2)
 	assert.Equal(t, 2, s.Size())
-
 }
 
 func TestPop(t *testing.T) {

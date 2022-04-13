@@ -74,7 +74,6 @@ func (l *List[T]) Prepend(values ...T) {
 
 // Get returns the value at the given index.
 func (l *List[T]) Get(index int) (t T, _ bool) {
-
 	if !l.checkIdx(index) {
 		return t, false
 	}

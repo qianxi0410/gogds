@@ -57,7 +57,6 @@ func TestPrepend(t *testing.T) {
 
 	assert.Equal(t, l.first.val, 1)
 	assert.Equal(t, l.last.val, 3)
-
 }
 
 func TestRemove(t *testing.T) {
@@ -109,7 +108,6 @@ func TestSort(t *testing.T) {
 
 	assert.Equal(t, 1, l.first.val)
 	assert.Equal(t, 3, l.last.val)
-
 }
 
 func TestSwap(t *testing.T) {
@@ -164,5 +162,4 @@ func TestSet(t *testing.T) {
 
 	l.Set(3, 8)
 	assert.Equal(t, l.Values()[3], 8)
-
 }
