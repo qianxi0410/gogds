@@ -1,5 +1,14 @@
 package doublelinkedlist
 
+import "github.com/qianxi0410/gogds/containers"
+
+// nolint
+func assertIteratorImplementation[T comparable]() {
+	var _ containers.IteratorWithIndex[T] = &Iterator[T]{}
+
+	var _ containers.ReverseIteratorWithIndex[T] = &Iterator[T]{}
+}
+
 // Iterator represents a forward iterator of a DoubleLinkedList.
 type Iterator[T comparable] struct {
 	list  *List[T]
