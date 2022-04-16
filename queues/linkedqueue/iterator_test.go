@@ -12,10 +12,5 @@ func TestIterator(t *testing.T) {
 		assert.Equal(t, it.Value()-1, it.Index())
 	}
 
-	assert.True(t, it.Last())
-
-	it.End()
-	for it.Prev() {
-		assert.Equal(t, it.Value()-1, it.Index())
-	}
+	assert.True(t, it.First())
 }

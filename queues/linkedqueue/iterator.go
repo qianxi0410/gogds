@@ -5,8 +5,6 @@ import "github.com/qianxi0410/gogds/containers"
 // nolint
 func assertIteratorImplementation[T comparable]() {
 	var _ containers.IteratorWithIndex[T] = &Iterator[T]{}
-
-	var _ containers.ReverseIteratorWithIndex[T] = &Iterator[T]{}
 }
 
 // Iterator is the structure used to iterate over a queue.
@@ -29,14 +27,6 @@ func (it *Iterator[T]) Next() bool {
 		it.index++
 	}
 
-	return it.q.checkIdx(it.index)
-}
-
-// Prev returns true if there are more elements to iterate over.
-func (it *Iterator[T]) Prev() bool {
-	if it.index >= 0 {
-		it.index--
-	}
 	return it.q.checkIdx(it.index)
 }
 
@@ -67,12 +57,4 @@ func (it *Iterator[T]) End() {
 func (it *Iterator[T]) First() bool {
 	it.Begin()
 	return it.Next()
-}
-
-// Last moves the iterator to the last element and returns true if there was a last element in the container.
-// If Last() returns true, then last element's index and value can be retrieved by Index() and Value().
-// Modifies the state of the iterator.
-func (it *Iterator[T]) Last() bool {
-	it.End()
-	return it.Prev()
 }
