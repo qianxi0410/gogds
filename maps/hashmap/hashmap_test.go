@@ -61,18 +61,3 @@ func TestRemove(t *testing.T) {
 	assert.False(t, ok)
 	assert.Equal(t, 0, v)
 }
-
-func TestKeys(t *testing.T) {
-	m := New[int, int]()
-	m.Put(1, 1)
-	m.Put(2, 2)
-	m.Put(3, 3)
-	m.Put(4, 4)
-
-	keys := m.Keys()
-	assert.Equal(t, 4, len(keys))
-	assert.Equal(t, 1, keys[0])
-	assert.Equal(t, 2, keys[1])
-	assert.Equal(t, 3, keys[2])
-	assert.Equal(t, 4, keys[3])
-}
