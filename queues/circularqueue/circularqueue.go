@@ -132,5 +132,13 @@ func (q *Queue[T]) String() string {
 
 // checkIdx checks if the index is valid.
 func (q *Queue[T]) checkIdx(idx int) bool {
-	return idx >= 0 && idx < q.size
+	if q.size == 0 {
+		return false
+	}
+
+	if q.end > q.start {
+		return idx >= q.start && idx < q.end
+	} else {
+		return idx >= q.start || idx < q.end
+	}
 }
