@@ -2,6 +2,7 @@ package circularqueue
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/qianxi0410/gogds/queues"
 )
@@ -104,10 +105,10 @@ func (q *Queue[T]) Clear() {
 
 // Values returns all values in the queue.
 func (q *Queue[T]) Values() []T {
-	values := make([]T, 0, q.size)
+	values := make([]T, q.size, q.size)
 
 	for i := range q.values {
-		values = append(values, q.values[i])
+		values[i] = q.values[(q.start+i)%q.maxSize]
 	}
 
 	return values
@@ -115,30 +116,16 @@ func (q *Queue[T]) Values() []T {
 
 // String returns a string representation of the queue.
 func (q *Queue[T]) String() string {
-	str := "CircularQueue: ["
-	for i := range q.values {
-		if i == q.start {
-			str += "|"
-		}
-		str += fmt.Sprintf("%v", q.values[i])
-		if i == q.end-1 {
-			str += "|"
-		}
-		str += ", "
+	values := make([]string, 0, q.size)
+
+	for _, v := range q.Values() {
+		values = append(values, fmt.Sprintf("%v", v))
 	}
-	str += "]\n"
-	return str
+
+	return fmt.Sprintf("CircularQueue: [%s]\n", strings.Join(values, ", "))
 }
 
 // checkIdx checks if the index is valid.
 func (q *Queue[T]) checkIdx(idx int) bool {
-	if q.size == 0 {
-		return false
-	}
-
-	if q.end > q.start {
-		return idx >= q.start && idx < q.end
-	} else {
-		return idx >= q.start || idx < q.end
-	}
+	return idx >= 0 && idx < q.size
 }
