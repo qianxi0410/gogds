@@ -22,7 +22,7 @@ type Queue[T any] struct {
 	values []T
 	// start points to the first element in the queue.
 	start int
-	// end points to the last element in the queue.
+	// end points to the last avaliable insert position in the queue.
 	end  int
 	full bool
 	// maxSize is the cap of the queue.
