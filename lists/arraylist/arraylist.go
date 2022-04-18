@@ -219,7 +219,7 @@ func (l *List[T]) shrink() {
 }
 
 func (l *List[T]) resize(cap int) {
-	newEle := make([]T, cap, cap)
+	newEle := make([]T, cap)
 	copy(newEle, l.elements)
 	l.elements = newEle
 }
